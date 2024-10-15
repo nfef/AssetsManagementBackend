@@ -6,6 +6,8 @@ const Company = require('./models/Company');
 const AssetType = require('./models/AssetType');
 const Asset = require('./models/Asset');
 const Floor = require('./models/Floor');
+const Inventory = require('./models/Inventory');
+const InventoryItem = require('./models/InventoryItem');
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.use('/api/companies', require('./routes/companies'));
 app.use('/api/assetTypes', require('./routes/assetTypes'));
 app.use('/api/assets', require('./routes/assets'));
 app.use('/api/floors', require('./routes/floors'));
+app.use('/api/inventories', require('./routes/inventories'));
 
 // Synchroniser les modèles et démarrer le serveur
 sequelize.sync().then(() => {
